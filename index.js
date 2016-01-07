@@ -102,15 +102,15 @@ ConnectApp = (function() {
               lr = tiny_lr({
                 key: opt.https.key || fs.readFileSync(__dirname + '/certs/server.key'),
                 cert: opt.https.cert || fs.readFileSync(__dirname + '/certs/server.crt'),
-                liveCSS: opt.liveCSS || true,
-                liveJs: opt.liveJs || true,
-                liveImg: opt.liveImg || true
+                liveCSS: typeof opt.liveCSS === "undefined" ? true : opt.liveCSS,
+                liveJs: typeof opt.liveJs === "undefined" ? true : opt.liveJs,
+                liveImg: typeof opt.liveImg === "undefined" ? true : opt.liveImg
               });
             } else {
               lr = tiny_lr({
-                liveCSS: opt.liveCSS || true,
-                liveJs: opt.liveJs || true,
-                liveImg: opt.liveImg || true
+                liveCSS: typeof opt.liveCSS === "undefined" ? true : opt.liveCSS,
+                liveJs: typeof opt.liveJs === "undefined" ? true : opt.liveJs,
+                liveImg: typeof opt.liveImg === "undefined" ? true : opt.liveImg
               });
             }
             lr.listen(opt.livereload.port);
