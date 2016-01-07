@@ -80,14 +80,14 @@ class ConnectApp
             lr = tiny_lr
               key: opt.https.key || fs.readFileSync __dirname + '/certs/server.key'
               cert: opt.https.cert || fs.readFileSync __dirname + '/certs/server.crt'
-			  liveCSS: opt.liveCSS || true
-			  liveJs: opt.liveJs || true
-			  liveImg: opt.liveImg || true
+              liveCSS: opt.liveCSS || true
+              liveJs: opt.liveJs || true
+              liveImg: opt.liveImg || true
           else
             lr = tiny_lr
-			  liveCSS: opt.liveCSS || true
-			  liveJs: opt.liveJs || true
-			  liveImg: opt.liveImg || true
+              liveCSS: opt.liveCSS || true
+              liveJs: opt.liveJs || true
+              liveImg: opt.liveImg || true
           lr.listen opt.livereload.port
           @log "LiveReload started on port #{opt.livereload.port}"
 
